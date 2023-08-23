@@ -20,4 +20,3 @@ public class AppTest {
         Assertions.assertEquals(expected, result, "the sum of 2 + 3 should be 5");
     }
 }
-
