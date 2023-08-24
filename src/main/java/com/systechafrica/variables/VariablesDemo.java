@@ -16,6 +16,32 @@ public class VariablesDemo {
 
         LOGGER.info("Long maximum value is " + Long.MAX_VALUE);
         LOGGER.info("Long maximum value is " + Long.MIN_VALUE);
+        //byte, long, short, int
+        //?wrapper classes
+
+        byte aPrimitive = 23;
+        Byte aWrapper = 23;
+
+        LOGGER.info("byte aPrimitive:" + aPrimitive);
+        LOGGER.info("Byte aWrapper:" + aWrapper);
+
+        int a = aWrapper.intValue();
+        LOGGER.info("Integer value from Byte aWrapper:" + a);
+
+        //short
+        short c = 23;
+        Short aShort = 23;
+
+        //int
+        int b = 23;
+        Integer aInt = 23;
+
+        //long
+        long d = 23;
+        //! One needs to explicitly suffix the long wrapper with an L
+        Long aLong = 23L;
+
+
     }
     private void constantVariable(){
         //constant variable
@@ -31,6 +57,14 @@ public class VariablesDemo {
 
         LOGGER.info("float value is " + floatRate);
         LOGGER.info("Double value is " + doubleRate);
+
+        //float wrapper
+        float price = 0.2344F;
+        Float priceFloat = 0.2344F;
+
+        //double wrapper
+        double pPrice = 0.2344;
+        Double pPriceDouble = 0.2344;
     }
     private void characterTypes(){
         //char type
@@ -38,6 +72,8 @@ public class VariablesDemo {
         
         LOGGER.info("character value is " + grade);
         
+        //char wrapper
+        Character characterGrade = 'F';
     }
     private void booleanTypes(){
         //boolean type
