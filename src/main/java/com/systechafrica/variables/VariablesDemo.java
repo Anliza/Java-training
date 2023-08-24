@@ -92,6 +92,13 @@ public class VariablesDemo {
         demo.floatingTypes();
         demo.characterTypes();
         demo.booleanTypes();
+
+        //Implicit and excplicit casting
+        Long a = 2147483648L;
+
+        int b = a.intValue(); //! run with wrapper class Long a
+        //int c = (int) a;   //! run with primitive data type long a
+        LOGGER.info("int b value" + b);
     }
     //changes not staged for commit
 } 
