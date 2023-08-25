@@ -46,4 +46,6 @@ public class OperatorsDemo {
         //app.arithmeticOperators();
         app.assignmentOperators();
     }
+    //just adding a change before continuing to assignment operators
+    //opportunity to document arithmetic operators commit
 }
