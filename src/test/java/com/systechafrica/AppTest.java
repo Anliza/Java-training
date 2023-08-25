@@ -23,7 +23,7 @@ public class AppTest {
     //running the test again
     @Test
     void inProduct (){
-        int result = Another.inProduct();
+        int result = Another.inProduct(2,3);
         int expected = 6;
         Assertions.assertEquals(expected, result);
     }

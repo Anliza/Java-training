@@ -7,10 +7,8 @@ public class Another {
 public static void main(String[] args) {
     
 }
- public static int inProduct(){
-    int e = 2;
-    int f = 3;
-
+ public static int inProduct(int e, int f){
+    
    int inProduct = e*f;
    return inProduct;
  }
