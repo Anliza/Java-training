@@ -38,8 +38,12 @@ public class OperatorsDemo {
         LOGGER.info("Remainder after Division: " + remainder);
 
     }
+    private void assignmentOperators(){
+
+    }
     public static void main(String[] args) {
         OperatorsDemo app = new OperatorsDemo(); //Instance
-        app.arithmeticOperators();
+        //app.arithmeticOperators();
+        app.assignmentOperators();
     }
 }
