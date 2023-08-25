@@ -39,8 +39,26 @@ public class OperatorsDemo {
 
     }
     private void assignmentOperators(){
+       // Simple assingment operator
+        int quantity = 35;
+        
+        // addition assignment operator
+        quantity += 10; // it equvalent is quantity = quantity + 10; 
+        LOGGER.info("Quantity: " + quantity);
 
+        // multiplication assignment operator
+        quantity *= 100; // its equivalent is quantity = quantity*100;
+        LOGGER.info("Quantity: " + quantity);
+
+        // Division assignment operator
+        quantity /= 5; // its equavalent is quantity = quantity / 5;
+        LOGGER.info("Quantity: " + quantity);
+
+        //Modulo assignment 
+        quantity %= 7; // quantity = quantity % 5;
+        LOGGER.info("Quantity: " + quantity);
     }
+    
     public static void main(String[] args) {
         OperatorsDemo app = new OperatorsDemo(); //Instance
         //app.arithmeticOperators();
