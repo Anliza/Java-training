@@ -9,15 +9,22 @@ public class AppTest {
 
     //? reference => App
     App app = new App();
+    Another another = new Another();
 
    @Test
     void add (){
-        //when
+        //when (arrange)
         int result = app.add(2, 3);
-        //then
+        //then (act or simulate)
         int expected = 5;
-        //verify result = expected
+        //verify result = expected (assert)
         Assertions.assertEquals(expected, result, "the sum of 2 + 3 should be 5");
     }
     //running the test again
+    @Test
+    void inProduct (){
+        int result = Another.inProduct();
+        int expected = 6;
+        Assertions.assertEquals(expected, result);
+    }
 }
