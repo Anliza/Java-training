@@ -58,11 +58,40 @@ public class OperatorsDemo {
         quantity %= 7; // quantity = quantity % 5;
         LOGGER.info("Quantity: " + quantity);
     }
-    
+    private void comparisonOperations(){
+        int studentOneAge = 20;
+        int studentTwoAge = 25;
+
+        //equality operator
+        boolean isStudentOneAgeEqualToStudentTwoAge = studentOneAge == studentTwoAge;
+        LOGGER.info("isStudentOneAgeEqualToStudentTwoAge: " + isStudentOneAgeEqualToStudentTwoAge);
+
+        //inequality operator
+        boolean isStudentOneAgeNotEqualToStudentTwoAge = studentOneAge != studentTwoAge;
+        LOGGER.info("isStudentOneAgeNotEqualToStudentTwoAge: " + isStudentOneAgeNotEqualToStudentTwoAge);
+
+        //less than operator
+        boolean isStudentOneAgeLessThanToStudentTwoAge = studentOneAge < studentTwoAge;
+        LOGGER.info("isStudentOneAgeLessThanToStudentTwoAge " + isStudentOneAgeLessThanToStudentTwoAge);
+
+        //Greater than operator
+        boolean isStudentOneAgeGreaterThanToStudentTwoAge = studentOneAge > studentTwoAge;
+        LOGGER.info("isStudentOneAgeGreaterThanToStudentTwoAge " + isStudentOneAgeGreaterThanToStudentTwoAge);
+
+        // TODO Do less than or equal to operator
+        boolean isStudentOneAgeGreaterThanOrEqualToStudentTwoAge = studentOneAge >= studentTwoAge;
+        LOGGER.info("isStudentOneAgeGreaterThanOrEqualToStudentTwoAge " + isStudentOneAgeGreaterThanOrEqualToStudentTwoAge);
+
+        // TODO Do greater than or equal to operator
+        boolean isStudentOneAgeLessThanOrEqualToStudentTwoAge = studentOneAge <= studentTwoAge;
+        LOGGER.info("isStudentOneAgeLessThanOrEqualToStudentTwoAge " + isStudentOneAgeLessThanOrEqualToStudentTwoAge);
+    }
     public static void main(String[] args) {
         OperatorsDemo app = new OperatorsDemo(); //Instance
         //app.arithmeticOperators();
-        app.assignmentOperators();
+        //app.assignmentOperators();
+        app.comparisonOperations();
+        
     }
     //just adding a change before continuing to assignment operators
     //opportunity to document arithmetic operators commit
