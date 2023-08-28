@@ -1,10 +1,7 @@
 package com.systechafrica;
 
-import java.util.logging.Logger;
-
 public class Another {
-    private static final Logger LOGGER = Logger.getLogger(Another.class.getName());
-public static void main(String[] args) {
+    public static void main(String[] args) {
     
 }
  public static int inProduct(int e, int f){
@@ -12,4 +9,6 @@ public static void main(String[] args) {
    int inProduct = e*f;
    return inProduct;
  }
-}  
+//created for test learning purposes
+} 
+

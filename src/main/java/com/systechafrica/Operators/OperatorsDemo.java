@@ -86,11 +86,50 @@ public class OperatorsDemo {
         boolean isStudentOneAgeLessThanOrEqualToStudentTwoAge = studentOneAge <= studentTwoAge;
         LOGGER.info("isStudentOneAgeLessThanOrEqualToStudentTwoAge " + isStudentOneAgeLessThanOrEqualToStudentTwoAge);
     }
+    public void andLogicalOperators(){
+        int studentOneAge = 17;
+        int studentTwoAge = 25;
+
+        boolean isStudentOneAllowed = studentOneAge >= 18;
+        boolean isStudentTwoAllowed = studentTwoAge >= 18;
+        //and operator
+        if (isStudentOneAllowed && isStudentTwoAllowed) {
+            LOGGER.info("All students allowed for ID registration");   
+        }else {
+                LOGGER.info("Not allowed  for ID registration");
+        }
+    }
+    public void orLogicalOperators(){
+        int studentOneAge = 17;
+        int studentTwoAge = 25;
+
+        boolean isStudentOneAllowed = studentOneAge >= 18;
+        boolean isStudentTwoAllowed = studentTwoAge >= 18;
+        //or operator
+        if (isStudentOneAllowed || isStudentTwoAllowed) {
+            LOGGER.info("Students allowed for ID registration");   
+        }else {
+                LOGGER.info("Not allowed  for ID registration");
+        }
+    }
+    public void notLogicalOperator(){
+        int studentOneAge = 17;
+        boolean isStudentOneAllowed = studentOneAge >= 18;
+        //not operator
+        if (isStudentOneAllowed) {
+            LOGGER.info("Students allowed for ID registration");   
+        }else {
+                LOGGER.info("Not allowed  for ID registration");
+        }
+    }
     public static void main(String[] args) {
         OperatorsDemo app = new OperatorsDemo(); //Instance
         //app.arithmeticOperators();
         //app.assignmentOperators();
-        app.comparisonOperations();
+        //app.comparisonOperations();
+        //app.andLogicalOperators();
+        //app.orLogicalOperators();
+        app.notLogicalOperator();
         
     }
     //just adding a change before continuing to assignment operators
