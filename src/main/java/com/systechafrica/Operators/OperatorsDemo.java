@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 public class OperatorsDemo {
     private static final Logger LOGGER = Logger.getLogger(OperatorsDemo.class.getName());
 
-    private void arithmeticOperators(){
+    public void arithmeticOperators(){
         // Addition Operator
         int studentOneAge = 22;
         int studentTwoAge = 19;
@@ -38,7 +38,7 @@ public class OperatorsDemo {
         LOGGER.info("Remainder after Division: " + remainder);
 
     }
-    private void assignmentOperators(){
+    public void assignmentOperators(){
        // Simple assingment operator
         int quantity = 35;
         
@@ -58,7 +58,7 @@ public class OperatorsDemo {
         quantity %= 7; // quantity = quantity % 5;
         LOGGER.info("Quantity: " + quantity);
     }
-    private void comparisonOperations(){
+    public void comparisonOperations(){
         int studentOneAge = 20;
         int studentTwoAge = 25;
 
