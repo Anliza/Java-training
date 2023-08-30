@@ -7,9 +7,10 @@ public class ATMMachine {
    private static final Logger LOGGER = Logger.getLogger(ATMMachine.class.getName());
     public static void main(String[] args) {
        ATMMachine app = new ATMMachine();
-       app.inputUsernameAndPassword();
-        
+       //app.inputUsernameAndPassword();
+       app.operatingBalance();
        }
+
     public void inputUsernameAndPassword(){
          Scanner scanner = new Scanner(System.in);
             final String MY_USERNAME = "anliz";
@@ -94,4 +95,20 @@ public class ATMMachine {
             }
     
         }
+    public void operatingBalance(){
+        Scanner scanner = new Scanner(System.in);
+
+        final String OPERATING_BALANCE = "Ksh. 1,000";
+        System.out.println("Choose service option:");
+        String option = scanner.nextLine();
+
+        if(option.equals("1")){
+             System.out.println("Your Balance is " + OPERATING_BALANCE);
+        }else {
+            System.out.println("Select valid option:");
+        }
+
+        scanner.close();
+    } 
 }
+
