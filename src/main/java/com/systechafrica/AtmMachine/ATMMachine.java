@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 public class ATMMachine {
    private static final Logger LOGGER = Logger.getLogger(ATMMachine.class.getName());
    Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args){
        ATMMachine app = new ATMMachine();
        
        app.detailConfirmation();
@@ -39,10 +39,10 @@ public class ATMMachine {
         
         //Prompt 
         while (inputRequest > 0){
-            System.out.print("Enter your username: ");
+            System.out.println("Enter your username: ");
             String username = scanner.nextLine();
 
-            System.out.print ("Enter your password: ");
+            System.out.println("Enter your password: ");
             String password = scanner.nextLine();
 
             boolean isUsername = username.equals(MY_USERNAME);
@@ -108,7 +108,7 @@ public class ATMMachine {
                 else {
                     System.out.println("You have entered an invalid option.");
                     }
-                
+                    
             }
                 break;
             }           
@@ -120,8 +120,8 @@ public class ATMMachine {
             inputRequest --;
             System.out.println("Enter details again: ");   
             System.out.println(+ inputRequest + " remaining entries left");  
-    }
-    System.out.println("No more attempts."); 
+        }
+    
     //displayPage();
 
     scanner.close(); 
