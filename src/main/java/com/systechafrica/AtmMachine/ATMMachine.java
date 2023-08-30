@@ -98,7 +98,7 @@ public class ATMMachine {
     public void operatingBalance(){
         Scanner scanner = new Scanner(System.in);
 
-        int operatingBalance = 1000;
+        double operatingBalance = 10000;
         System.out.println("Choose service option:");
         String option = scanner.nextLine();
 
@@ -110,17 +110,24 @@ public class ATMMachine {
             int depositAmount = scanner.nextInt();
             operatingBalance = depositAmount + operatingBalance;
             System.out.println("Your Balance is Ksh." + operatingBalance);
-            }
-            else if (option.equals("3")){
-                System.out.println ("Enter amount to withdraw ");
-                int withdrawAmount = scanner.nextInt();
-                if (operatingBalance > withdrawAmount){
-                operatingBalance =  operatingBalance - withdrawAmount;
+        }
+        else if (option.equals("3")){
+            System.out.println ("Enter amount to withdraw ");
+            int withdrawAmount = scanner.nextInt();
+            if (operatingBalance > withdrawAmount){
+                double withdrwalCharges = 0.02 * withdrawAmount;
+                operatingBalance =  operatingBalance - withdrawAmount - (double) withdrwalCharges;
+                System.out.println("Your witdrawal charge is Ksh." + withdrwalCharges);
                 System.out.println("Your Balance is Ksh." + operatingBalance);
                 }else {
                     System.out.println("Go back to the main menu ");
-                }
             }
+        }
+        else if (option.equals("5")){
+            System.exit(0);
+        }else {
+            System.out.println("You entered an invalid option.");
+        }
         scanner.close();   
     }
 }
