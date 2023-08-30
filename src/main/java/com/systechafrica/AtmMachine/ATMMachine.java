@@ -1,7 +1,7 @@
 package com.systechafrica.AtmMachine;
 
 import java.util.Scanner;
-//import java.util.Scanner;
+
 import java.util.logging.Logger;
 
 public class ATMMachine {
@@ -9,11 +9,10 @@ public class ATMMachine {
    Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
        ATMMachine app = new ATMMachine();
-       //app.inputUsernameAndPassword();
-       //app.operatingBalance();
-       //app.detailConfirmation();
+       
        app.displayPage();
        }
+       
     public void displayPage(){
         System.out.println ("********************");
         System.out.println ("ATM SIMULATOR");
@@ -28,5 +27,4 @@ public class ATMMachine {
         System.out.println ("......................");
     }   
     
-
 }
