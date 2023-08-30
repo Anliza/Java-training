@@ -98,17 +98,19 @@ public class ATMMachine {
     public void operatingBalance(){
         Scanner scanner = new Scanner(System.in);
 
-        final String OPERATING_BALANCE = "Ksh. 1,000";
+        int operatingBalance = 1000;
         System.out.println("Choose service option:");
         String option = scanner.nextLine();
 
         if(option.equals("1")){
-             System.out.println("Your Balance is " + OPERATING_BALANCE);
-        }else {
-            System.out.println("Select valid option:");
+             System.out.println("Your Balance is Ksh." + operatingBalance);
+        }else if (option.equals("2")){
+            System.out.println ("Enter amount to deposit "); 
+                int amount = scanner.nextInt();
+                operatingBalance = (amount + operatingBalance);
+                System.out.println("Your Balance is Ksh." + operatingBalance);
         }
-
-        scanner.close();
-    } 
+        scanner.close();   
+    }
 }
 
