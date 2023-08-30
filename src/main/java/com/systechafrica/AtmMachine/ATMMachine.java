@@ -46,6 +46,26 @@ public class ATMMachine {
             } 
             else {
                 System.err.println("Incorrect username or password");
+                System.out.println(" ");
+                System.out.println("Enter details again: ");
+
+                System.out.print("Enter your username: ");
+                String username2 = scanner.nextLine();
+
+                System.out.print ("Enter your password: ");
+                String password2 = scanner.nextLine();
+
+                if (username2.equals(MY_USERNAME) && password2.equals(MY_PASSWORD)){
+                    System.out.println ("***************");
+                    System.out.println ("ATM SIMULATOR");
+                    System.out.println ("'''''''''''''''");
+                    System.out.println ("ATM SERVICES");
+                    System.out.println ("_______________");
+                } 
+                else {
+                    System.err.println("Incorrect username or password");
+                    System.err.println("You have exhausted your number of login attempts");
+                }
             }
         scanner.close();
         }
