@@ -104,12 +104,23 @@ public class ATMMachine {
 
         if(option.equals("1")){
              System.out.println("Your Balance is Ksh." + operatingBalance);
-        }else if (option.equals("2")){
-            System.out.println ("Enter amount to deposit "); 
-                int amount = scanner.nextInt();
-                operatingBalance = (amount + operatingBalance);
-                System.out.println("Your Balance is Ksh." + operatingBalance);
         }
+        else if (option.equals("2")){
+            System.out.println ("Enter amount to deposit "); 
+            int depositAmount = scanner.nextInt();
+            operatingBalance = depositAmount + operatingBalance;
+            System.out.println("Your Balance is Ksh." + operatingBalance);
+            }
+            else if (option.equals("3")){
+                System.out.println ("Enter amount to withdraw ");
+                int withdrawAmount = scanner.nextInt();
+                if (operatingBalance > withdrawAmount){
+                operatingBalance =  operatingBalance - withdrawAmount;
+                System.out.println("Your Balance is Ksh." + operatingBalance);
+                }else {
+                    System.out.println("Go back to the main menu ");
+                }
+            }
         scanner.close();   
     }
 }
