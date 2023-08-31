@@ -40,6 +40,7 @@ public class LoopingStatements {
     }
     public void breakJumpStatements(){
         for (int index = 0; index < 10; index++){
+            LOGGER.info ("before my loop" );
             if( index == 5) { //?when the index gets to 5 upon execution (executes 5 times, 0-4), the loop terminates
             break; //?break allows for loop to terminate after condition is met
             }
@@ -49,6 +50,7 @@ public class LoopingStatements {
     }
       
     public void continueJumpStatements(){
+        LOGGER.info ("before my loop" );
         for (int index = 0; index < 10; index++){
             if( index == 5) {//?when the index gets to 5 upon execution (executes 5 times, 0-4), the loop skip the said iteration
             continue;//?contine allows for the loop to skip the iteration in the condition
@@ -57,12 +59,24 @@ public class LoopingStatements {
         }
         LOGGER.info ("after my loop" );//?also outputed after completion of the loop. in this case after "my indes is 9"
     }
+    public void returnJumpStatements(){
+        LOGGER.info ("before my loop" );
+        for (int index = 0; index < 10; index++){
+            if( index == 5) {
+            return; //?terminates entire method when condition is met
+            }
+            LOGGER.info ("my index is:" + index);
+        }
+        LOGGER.info ("after my loop" ); //? part of the method hence not outputed after termination
+    }
     public static void main(String[] args) {
         LoopingStatements app = new LoopingStatements(); 
         //app.forLoop();
         //app.whileLoop(); 
         //app.doWhileLoop(); 
         //app.breakJumpStatements();
-        app.continueJumpStatements();
+        //app.continueJumpStatements();
+        app.returnJumpStatements();
+
     }
 }
