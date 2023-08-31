@@ -38,10 +38,31 @@ public class LoopingStatements {
         } while (myNumber < 10); //at myNumber < 0, the dowhile loop has to execute atleast once before it checks the condition
         LOGGER.info("Counter = " + counter);// executes first, then it checks the condition
     }
-public static void main(String[] args) {
-        LoopingStatements app = new LoopingStatements();
+    public void breakJumpStatements(){
+        for (int index = 0; index < 10; index++){
+            if( index == 5) { //?when the index gets to 5 upon execution (executes 5 times, 0-4), the loop terminates
+            break; //?break allows for loop to terminate after condition is met
+            }
+            LOGGER.info ("my index is:" + index);//?this is skipped after condition is met and loop terminates
+        }
+        LOGGER.info ("after my loop" ); //?execution moves to here after loop terminates
+    }
+      
+    public void continueJumpStatements(){
+        for (int index = 0; index < 10; index++){
+            if( index == 5) {//?when the index gets to 5 upon execution (executes 5 times, 0-4), the loop skip the said iteration
+            continue;//?contine allows for the loop to skip the iteration in the condition
+            }
+            LOGGER.info ("my index is:" + index);//?does not print out 5(condition iteration),Proceeds to print 6 onwards
+        }
+        LOGGER.info ("after my loop" );//?also outputed after completion of the loop. in this case after "my indes is 9"
+    }
+    public static void main(String[] args) {
+        LoopingStatements app = new LoopingStatements(); 
         //app.forLoop();
         //app.whileLoop(); 
-        app.doWhileLoop(); 
+        //app.doWhileLoop(); 
+        //app.breakJumpStatements();
+        app.continueJumpStatements();
     }
 }
