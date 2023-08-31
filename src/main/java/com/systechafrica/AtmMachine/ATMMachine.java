@@ -8,9 +8,9 @@ public class ATMMachine {
    private static final Logger LOGGER = Logger.getLogger(ATMMachine.class.getName());
    Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
-       ATMMachine app = new ATMMachine();
+       ATMMachine atmmachine = new ATMMachine();
        
-       app.detailConfirmation();
+       atmmachine.detailConfirmation();
        //app.displayPage();
        }
 

@@ -21,16 +21,22 @@ public class LoopingStatements {
     }
     public void whileLoop(){
         int studentCount = 0;
-        while(studentCount < 10){
+        int counter = 0;
+        while(studentCount < 10){ //at studentCount < 0, the while loop does not execute even once unless the condition is met
             LOGGER.info("Student Count = " + studentCount);
             studentCount++; //studentCount = studentCount +1
+            counter ++;
     }
+    LOGGER.info("Counter = " + counter);
 }
     public void doWhileLoop(){
-        int studentCount = 0;
-        do {LOGGER.info("Student Count = " + studentCount); 
-        studentCount ++;  
-        } while (studentCount <5); 
+        int myNumber = 0;
+        int counter = 0;
+        do {LOGGER.info("muyNumber is = " + myNumber); 
+        myNumber ++;  
+        counter ++;
+        } while (myNumber < 10); //at myNumber < 0, the dowhile loop has to execute atleast once before it checks the condition
+        LOGGER.info("Counter = " + counter);// executes first, then it checks the condition
     }
 public static void main(String[] args) {
         LoopingStatements app = new LoopingStatements();
