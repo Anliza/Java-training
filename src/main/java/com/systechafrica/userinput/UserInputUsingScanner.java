@@ -2,6 +2,8 @@ package com.systechafrica.userinput;
 
 import java.util.Scanner;
 
+import com.systechafrica.util.ValidateInput;
+
 public class UserInputUsingScanner {
     
 
@@ -15,12 +17,17 @@ public class UserInputUsingScanner {
 
         System.out.print("Enter your password; ");
         String password =scanner.nextLine();
+        if (ValidateInput.validate(username) && ValidateInput.validate(password)){
 
-        if(username.equals(DB_USERNAME) && password.equals(DB_PASSWORD)){
+            if(username.equals(DB_USERNAME) && password.equals(DB_PASSWORD)){
             System.out.println("Welcome to my website");
+            }
+            else{
+            System.err.println("Incorrect usernaame and password");
+            }
         }
         else{
-            System.err.println("Incorrect usernaame and password");
+            throw new IllegalStateException("Invalid username and password."); 
         }
 
         scanner.close();
