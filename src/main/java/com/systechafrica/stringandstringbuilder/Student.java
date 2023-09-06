@@ -9,12 +9,18 @@ public class Student {
     private String nickname;
 
     public String getFullDetails(){
-        StringBuilder sb = new StringBuilder;
+        StringBuilder sb = new StringBuilder();
         sb.append(firstName)
         .append("")
         .append(lastName)
         .append("")
         .append(email)
+        .append("")
+        .append(regNo)
+        .append("")
+        .append(address)
+        .append("")
+        .append(nickname)
         .append("");
         return sb.toString();
     }
