@@ -2,10 +2,8 @@ package com.systechafrica.AtmMachine;
 
 import java.util.Scanner;
 
-import java.util.logging.Logger;
-
 public class ATMMachine {
-   private static final Logger LOGGER = Logger.getLogger(ATMMachine.class.getName());
+   
    Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
        ATMMachine atmmachine = new ATMMachine();

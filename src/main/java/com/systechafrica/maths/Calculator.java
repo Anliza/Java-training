@@ -37,6 +37,7 @@ public class Calculator {
         System.out.println("Firstname" + firstName);
         System.out.println("Middlename" + middleName);
         System.out.println("Lastname" + lastName);*/
- }
+    scanner.close();
+    }
 
 }
