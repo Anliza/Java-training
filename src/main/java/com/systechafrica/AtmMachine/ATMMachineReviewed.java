@@ -41,6 +41,27 @@ public class ATMMachineReviewed {
                 System.out.println("You have entered an invalid option.");
                 System.out.println("Choose a another option.");
             }
+
+            /*  switch(option){
+                    case ("1"):
+                        app.checkBalance();
+                        break;
+                    case ("2"):
+                        app.performDeposit();
+                        break;
+                    case ("3"):
+                        app.performWithdrawal();
+                        break;
+                    case ("4"):
+                        app.performTransfer();
+                        break;
+                    case("5"):
+                        app.printReceipt();
+                        keepShowingMenu = false;
+                    default:
+                        System.out.println("You have entered an invalid option.");
+                        System.out.println("Choose a another option.");
+                } */
             }
 
         }
