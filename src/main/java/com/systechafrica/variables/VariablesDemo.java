@@ -40,7 +40,7 @@ public class VariablesDemo {
         long d = 23;
         //! One needs to explicitly suffix the long wrapper with an L
         Long aLong = 23L;
-
+        LOGGER.info(c +" "+ aShort +" " + b + " " + d + " " + aInt + " " + aLong);
 
     }
     private void constantVariable(){
@@ -65,6 +65,7 @@ public class VariablesDemo {
         //double wrapper
         double pPrice = 0.2344;
         Double pPriceDouble = 0.2344;
+        LOGGER.info(pPrice +" "+ pPriceDouble +" " +price + " " + priceFloat);
     }
     private void characterTypes(){
         //char type
@@ -74,6 +75,7 @@ public class VariablesDemo {
         
         //char wrapper
         Character characterGrade = 'F';
+        System.out.println(characterGrade);
     }
     private void booleanTypes(){
         //boolean type

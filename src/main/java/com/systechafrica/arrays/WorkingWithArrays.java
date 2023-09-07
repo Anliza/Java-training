@@ -10,7 +10,7 @@ public class WorkingWithArrays{
         int[] numbers = {34, 45, 67, 23, 54, 56 }; //int numbers
 
         int ages[] = { 45, 10, 26, 35, 40, 59 }; // c/c++ array is also valid in java not commonly used
-
+        LOGGER.info(""+ages);
         String[] nickNames = { "mhusika", "Ntate", "Yokana" };
         
         for(int i = 0; i < numbers.length; i++) {
@@ -22,10 +22,10 @@ public class WorkingWithArrays{
         LOGGER.info(nickNames[1]);
         LOGGER.info(nickNames[2]);
 
-        int[] a = { 1, 2, 3, 4, 5 }; //
+        int[] a = { 1, 2, 3, 4, 5 }; 
         for (int i = 0; i < a.length; i = i + 1) {
             if (a[i] % 2 != 0) {
-                LOGGER.info("" + a[i]); //
+                LOGGER.info("" + a[i]); 
             }
         }
     }
@@ -44,6 +44,8 @@ public class WorkingWithArrays{
 
         int [][] matrix4;
         matrix4= new int [3][];
+        LOGGER.info(matrix3 +" " + matrix4);//unlogically solving problems
+
         // Setting values for the array
         
         int [][] matrix2 = new int [3][3]; //? a multi dimensional array with length 3
