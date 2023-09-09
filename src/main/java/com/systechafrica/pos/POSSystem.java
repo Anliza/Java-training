@@ -1,10 +1,10 @@
 package com.systechafrica.pos;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 public class POSSystem {
-    private static final Logger LOGGER = Logger.getLogger(POSSystem.class.getName());
+    //private static final Logger LOGGER = Logger.getLogger(POSSystem.class.getName());
     Scanner scanner = new Scanner(System.in);
 
     final String DEFAULT_PASSWORD = "Admin123";
@@ -13,15 +13,48 @@ public class POSSystem {
     double unitPrice;
     double total;
     Items buy = new Items(); 
-    boolean itemed = false;
     int itemNumber = 1;
     double sumOfTotalValue;
     double amountByCustomer;
     double changeBack;
     public static void main(String[] args) {
         POSSystem pos = new POSSystem();
-        pos.addItem();
-        pos.makePayment();
+        Scanner scanner = new Scanner(System.in);
+        boolean logInSuccess = pos.login();
+        if (logInSuccess){
+            System.out.println("Successful Login.");
+            System.out.println();
+            boolean showMenu = true;
+            while (showMenu){
+                pos.displayMenu();
+                int option = scanner.nextInt();
+                System.out.println();
+                System.out.println("...");
+                switch (option) {
+                    case 1:
+                        pos.addItem();
+                        break;
+                    case 2:
+                        pos.displayReceipt();
+                        pos.makePayment();
+                        break;
+                    case 3:
+                        pos.displayReceipt();
+                        System.exit(0);
+                        break;
+                
+                    default:
+                        System.out.println("You have entered an invalid option.");
+                        System.out.println("Choose a another option.");
+                        break;
+                }
+            }
+           
+            
+        }else{
+            System.out.println("You have exhausted your log in attempts.");
+        }
+        scanner.close();
     }
 
     public boolean login(){
@@ -37,7 +70,7 @@ public class POSSystem {
             System.out.println("You entered the wrong password.");
             inputs ++;
         }
-        System.out.println("You are out of login attempts.");
+        
         return logInSuccess;
     }
 
@@ -56,9 +89,7 @@ public class POSSystem {
     public void addItem(){
         int noOfItems = 1;
         while(noOfItems >= 1){
-            
             System.out.println("item: " + itemNumber);
-
             System.out.print("Enter Item Code: ");
             buy.itemCode = scanner.nextInt();
             System.out.print("Enter Quantity: ");
@@ -70,12 +101,11 @@ public class POSSystem {
             itemNumber ++;
             System.out.print("More items? Press any key for more items or N for no more item:-> ");
             String moreItems = scanner.next();
-          //scanner.nextLine();
-                if(moreItems.equalsIgnoreCase("N")){
+            if(moreItems.equalsIgnoreCase("N")){
                     break;
                 }
             }
-            noOfItems++;
+            noOfItems++; 
     }
 
     public void makePayment(){
@@ -114,5 +144,7 @@ public class POSSystem {
         System.out.println("*********************************************");
         System.out.println("THANK YOU FOR SHOPPING WITH US");
         System.out.println("*********************************************");
+        
     }
+
 }

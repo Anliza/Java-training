@@ -42,6 +42,7 @@ public class Table {
             String moreItems = scanner.next();
           //scanner.nextLine();
                 if(moreItems.equalsIgnoreCase("N")){
+                    itemed =true;
                     break;
                 }
             }
