@@ -2,9 +2,9 @@ package com.systechafrica.pos;
 
 
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-public class Table {
+public class Table {/* 
     Items buy = new Items(); 
     boolean itemed = false;
     int itemNumber = 1;
@@ -15,8 +15,8 @@ public class Table {
     public static void main(String[] args) {
         Table table =new Table();
         table.items();
-        table.sumOfTotalValue();
-        table.change();
+        //table.sumOfTotalValue();
+        //table.change();
         table.listArray();
         
        
@@ -91,5 +91,5 @@ public class Table {
             System.out.println("The amount is insufficient. Add some more. ");
         }
     }
-    
+    */
 }

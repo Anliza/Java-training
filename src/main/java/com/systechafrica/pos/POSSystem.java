@@ -1,17 +1,12 @@
 package com.systechafrica.pos;
 
 import java.util.Scanner;
-//import java.util.logging.Logger;
+
 
 public class POSSystem {
-    //private static final Logger LOGGER = Logger.getLogger(POSSystem.class.getName());
     Scanner scanner = new Scanner(System.in);
 
     final String DEFAULT_PASSWORD = "Admin123";
-    int itemCode;
-    int quantity;
-    double unitPrice;
-    double total;
     Items buy = new Items(); 
     int itemNumber = 1;
     double sumOfTotalValue;
@@ -130,7 +125,7 @@ public class POSSystem {
     }
 
     public void displayReceipt(){
-        System.out.print("Item Code  "+ "Quantity  "+ "Unit Price   "+ "Total Value");
+        System.out.print("Item Code  "+ "Quantity  "+ " Unit Price   "+ "Total Value");
         System.out.println();
         for (int i = 1; i<=itemNumber; i++) {
             Items buy = new Items(i, i, i, i);
