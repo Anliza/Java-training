@@ -2,7 +2,14 @@ package com.systechafrica.hotelmenu;
 
 public class Options {
   
-    String option;
+    private String option;
+    private int price;
+    
+    public Options(String option, int price) {
+        this.option = option;
+        this.price = price;
+    }
+
     public String getOption() {
         return option;
     }
@@ -11,7 +18,6 @@ public class Options {
         this.option = option;
     }
 
-    int price;
 
     public int getPrice() {
         return price;
@@ -24,6 +30,7 @@ public class Options {
     public Options(){
 
     }
+
 
     public void showOption(){
         System.out.println(option);

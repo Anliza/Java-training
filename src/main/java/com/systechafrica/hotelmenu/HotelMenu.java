@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class HotelMenu {
     Scanner scanner = new Scanner(System.in);
     final String DEFAULT_PASSWORD = "Admin123";
+    final int MAX_OPTIONS = 50;
+    Options[] options = new Options[MAX_OPTIONS];
     static int mealTotal;
     static int payamentAmount;
     static int option;
@@ -90,10 +92,10 @@ public class HotelMenu {
                 }
                 else if(toPayament.equals("Y")){
                     System.out.println("Pay now for:");
-                    
-                    //opt.getOption();
+
                     System.out.println(opt.getOption());
-                    //opt.showOption();
+                    menu.listOptions();
+                    
                     //get data for the option
                     System.out.println("************************");
                     System.out.println("Total:-------------------" + mealTotal);
@@ -253,4 +255,12 @@ public class HotelMenu {
         }
     }
     
+    public void listOptions(){
+        
+        for (int i = 1; i < 50; i++){
+            Options opt = options[i];
+            System.out.println(options.length);
+            System.out.println("i am running");
+        }
+    }
 }
