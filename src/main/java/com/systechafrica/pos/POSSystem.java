@@ -2,10 +2,11 @@ package com.systechafrica.pos;
 
 import java.util.Scanner;
 
+import com.systechafrica.reusablecode.ReusableCode;
+
 
 public class POSSystem {
     Scanner scanner = new Scanner(System.in);
-
     final String DEFAULT_PASSWORD = "Admin123";
     final int MAX_NO = 100;
     Items[] items = new Items[MAX_NO];
@@ -15,10 +16,12 @@ public class POSSystem {
     double sumOfTotalValue = 0;
     double amountByCustomer;
     double changeBack;
+
     public static void main(String[] args) {
         POSSystem pos = new POSSystem();
         Scanner scanner = new Scanner(System.in);
-        boolean logInSuccess = pos.login();
+        ReusableCode rs = new ReusableCode();
+        boolean logInSuccess = rs.login();
         if (logInSuccess){
             System.out.println("Successful Login.");
             System.out.println();
@@ -47,29 +50,10 @@ public class POSSystem {
                         break;
                 }
             }
-           
-            
         }else{
             System.out.println("You have exhausted your log in attempts.");
         }
         scanner.close();
-    }
-
-    public boolean login(){
-        boolean logInSuccess = false;
-        int inputs = 1;
-        while (inputs <= 3 ){
-            System.out.print("Enter your password: ");
-            String userPassword = scanner.nextLine();
-            if(userPassword.equals(DEFAULT_PASSWORD)){
-                logInSuccess =true;
-                break;
-            }          
-            System.out.println("You entered the wrong password.");
-            inputs ++;
-        }
-        
-        return logInSuccess;
     }
 
     public void displayMenu(){
@@ -104,7 +88,6 @@ public class POSSystem {
                     break;
                 }
             }
-            //noOfItems++; 
     }
 
     public void makePayment(){

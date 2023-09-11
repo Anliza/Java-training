@@ -2,27 +2,24 @@ package com.systechafrica.hotelmenu;
 
 import java.util.Scanner;
 
+import com.systechafrica.reusablecode.ReusableCode;
+
 public class HotelMenu {
     Scanner scanner = new Scanner(System.in);
-    final String DEFAULT_PASSWORD = "Admin123";
     final int MAX_OPTIONS = 50;
     Options[] options = new Options[MAX_OPTIONS];
     int noOfOptions = 0;
     Options opt = new Options();
     static int mealTotal;
     static int payamentAmount;
-    static int option;
-    
-    
+    static int option; 
 
     public static void main(String[] args) {
+        ReusableCode rs = new ReusableCode();
         HotelMenu menu = new HotelMenu();
         Scanner scan = new Scanner(System.in);
-        
-        //int noOfOptions = 1;
-        //boolean firstChoiceSelected = false;
 
-        boolean logInSuccess = menu.loginH();
+        boolean logInSuccess = rs.login();
         if (logInSuccess){
             System.out.println("Successful Login.");
             System.out.println();
@@ -37,24 +34,6 @@ public class HotelMenu {
             System.out.println("You have exhausted your log in attempts.");
         }
         scan.close();
-    }
-
-       
-    public boolean loginH(){
-        boolean logInSuccess = false;
-        int inputs = 1;
-        while (inputs <= 3 ){
-            System.out.print("Enter your password: ");
-            String userPassword = scanner.nextLine();
-            if(userPassword.equals(DEFAULT_PASSWORD)){
-                logInSuccess =true;
-                break;
-            }          
-            System.out.println("You entered the wrong password.");
-            inputs ++;
-        }
-        
-        return logInSuccess;
     }
     
     public void displayMenu(){
@@ -77,25 +56,17 @@ public class HotelMenu {
         System.out.println();
         System.out.println("Choose your Drink/Meal-one at a time:");
     }
-
     
     public static int balanceBack(){
         int balance = 0;
         if (payamentAmount > mealTotal){
             balance = payamentAmount - mealTotal;
-            
         }
         return balance; 
     }
     
-    public void optionss(){
-       
-    }
-
     public void cashierScreen(){
-        
         boolean optionsSelected = false;
-        //boolean firstChoiceSelected = false;
         while (true){
             System.out.print("Enter your meal/drink option: ");
             option = scanner.nextInt();
@@ -129,15 +100,12 @@ public class HotelMenu {
                     case 7:
                         System.out.println("Thank You");
                         break;
-                
                 }
             
             Options selOptions = new Options(opt.getOption(), opt.getPrice());
             options[noOfOptions] = selOptions;
             noOfOptions++;
 
-           
-           // while(firstChoiceSelected){
             System.out.print("Do you want to enter another meal/drink option: ");
             String anotherOption = scanner.next();
             if(anotherOption.equalsIgnoreCase("N")){
@@ -145,14 +113,12 @@ public class HotelMenu {
                 break;
             }else if(anotherOption.equalsIgnoreCase("Y")){
                 optionsSelected = true;
-                
-                
+
             }else{
                 System.out.println("You have entered an invalid option. Enter Y/N for yes or No");
+                noOfOptions--;
             }
                 
-           // }
-        //break;
         }
         System.out.println("-------------------");
         while (optionsSelected){
@@ -164,13 +130,13 @@ public class HotelMenu {
             else if(toPayament.equalsIgnoreCase("Y")){
                 System.out.println("Pay now for:");
                 mealTotal = 0;
+                //get data for each option
                 for(int i = 0; i < noOfOptions; i++){
                     Options newOptions = options[i]; 
                     System.out.println(newOptions.getOption());
 
                     mealTotal += newOptions.getPrice();
                 }
-                //get data for the option
                 System.out.println("************************");
                 System.out.println("Total:-------------------" + mealTotal);
                 System.out.println("Enter amount to Pay:");
