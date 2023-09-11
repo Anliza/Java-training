@@ -94,7 +94,7 @@ public class HotelMenu {
                     System.out.println("Pay now for:");
 
                     System.out.println(opt.getOption());
-                    menu.listOptions();
+                    //menu.listOptions();
                     
                     //get data for the option
                     System.out.println("************************");
