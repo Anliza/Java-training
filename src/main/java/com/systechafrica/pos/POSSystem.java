@@ -12,7 +12,7 @@ public class POSSystem {
     int noOfItems = 0;
     int itemNumber = 1;
     Items buy = new Items();
-    double sumOfTotalValue;
+    double sumOfTotalValue = 0;
     double amountByCustomer;
     double changeBack;
     public static void main(String[] args) {
@@ -118,22 +118,16 @@ public class POSSystem {
         }
     }
 
-    public void sumOfTotals(){
-        sumOfTotalValue = 0.0;
-        int i = 0;
-        while (i < itemNumber){
-            //sumOfTotalValue += buy.total;
-            break;
-        }
-        i++;
-    }
-
     public void displayReceipt(){
         System.out.print("Item Code  "+ "Quantity  "+ " Unit Price   "+ "Total Value");
         System.out.println();
-        for (int i = 1; i<=itemNumber; i++) {
-            //Items buy = new Items(i, i, i, i);
-            System.out.println("   " + buy.itemCode+"         " + buy.quantity+ "          " + buy.unitPrice+ "          " );
+        sumOfTotalValue = 0;
+        for (int i = 0; i < noOfItems; i++) {
+            Items buy = items[i];
+            double totalPrice = buy.quantity * buy.unitPrice;
+            System.out.println("   " + buy.itemCode+"         " + buy.quantity+ "          " + buy.unitPrice+ "          " + totalPrice);
+        
+            sumOfTotalValue += totalPrice;
         }
         System.out.println("*********************************************");
         System.out.println("Total: "  + sumOfTotalValue);
