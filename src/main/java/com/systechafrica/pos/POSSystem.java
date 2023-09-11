@@ -7,8 +7,11 @@ public class POSSystem {
     Scanner scanner = new Scanner(System.in);
 
     final String DEFAULT_PASSWORD = "Admin123";
-    Items buy = new Items(); 
+    final int MAX_NO = 100;
+    Items[] items = new Items[MAX_NO];
+    int noOfItems = 0;
     int itemNumber = 1;
+    Items buy = new Items();
     double sumOfTotalValue;
     double amountByCustomer;
     double changeBack;
@@ -82,25 +85,26 @@ public class POSSystem {
     }
     
     public void addItem(){
-        int noOfItems = 1;
-        while(noOfItems >= 1){
-            System.out.println("item: " + itemNumber);
+        
+        while(true){
             System.out.print("Enter Item Code: ");
-            buy.itemCode = scanner.nextInt();
+            int itemCode = scanner.nextInt();
             System.out.print("Enter Quantity: ");
-            buy.quantity = scanner.nextInt();
+            int quantity = scanner.nextInt();
             System.out.print("Enter the Unit Price: ");
-            buy.unitPrice = scanner.nextDouble();
-            buy.total = buy.quantity*buy.unitPrice;
-            System.out.println("Total value: " + buy.total);
-            itemNumber ++;
+            double unitPrice = scanner.nextDouble();
+
+            Items buyItems = new Items(itemCode, quantity, unitPrice);
+            items[noOfItems] = buyItems;
+            noOfItems++;
+
             System.out.print("More items? Press any key for more items or N for no more item:-> ");
             String moreItems = scanner.next();
             if(moreItems.equalsIgnoreCase("N")){
                     break;
                 }
             }
-            noOfItems++; 
+            //noOfItems++; 
     }
 
     public void makePayment(){
@@ -118,7 +122,7 @@ public class POSSystem {
         sumOfTotalValue = 0.0;
         int i = 0;
         while (i < itemNumber){
-            sumOfTotalValue += buy.total;
+            //sumOfTotalValue += buy.total;
             break;
         }
         i++;
@@ -128,8 +132,8 @@ public class POSSystem {
         System.out.print("Item Code  "+ "Quantity  "+ " Unit Price   "+ "Total Value");
         System.out.println();
         for (int i = 1; i<=itemNumber; i++) {
-            Items buy = new Items(i, i, i, i);
-            System.out.println("   " + buy.itemCode+"         " + buy.quantity+ "          " + buy.unitPrice+ "          " + buy.total);
+            //Items buy = new Items(i, i, i, i);
+            System.out.println("   " + buy.itemCode+"         " + buy.quantity+ "          " + buy.unitPrice+ "          " );
         }
         System.out.println("*********************************************");
         System.out.println("Total: "  + sumOfTotalValue);
