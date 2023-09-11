@@ -13,6 +13,7 @@ public class HotelMenu {
 
     public static void main(String[] args) {
         HotelMenu menu = new HotelMenu();
+        Options opt = new Options();
         Scanner scan = new Scanner(System.in);
         
         //int noOfOptions = 1;
@@ -29,6 +30,38 @@ public class HotelMenu {
                 System.out.print("Enter your meal/drink option: ");
                 option = scan.nextInt();
                 System.out.println(option);
+
+                switch (option){
+                    case 1:
+                        opt.setOption("Chai------------------------15");
+                        opt.setPrice(15);
+                        break;
+                    case 2:
+                        opt.setOption("Andazi----------------------10");
+                        opt.setPrice(10);
+                        break; 
+                    case 3:
+                        opt.setOption("Tosti-----------------------12");
+                        opt.setPrice(12);
+                        break; 
+                    case 4:
+                        opt.setOption("Ndengu and accomplishments--70");
+                        opt.setPrice(70);
+                        break;  
+                    case 5:
+                        opt.setOption("Beans and accomplishments----70");
+                        opt.setPrice(70);
+                        break;
+                    case 6:
+                        opt.setOption("Pilau Veg--------------------90");
+                        opt.setPrice(90);
+                        break;
+                    case 7:
+                        System.out.println("Thank You");
+                        break;
+                
+                }
+
             // firstChoiceSelected =true;
             // while(firstChoiceSelected){
                     System.out.print("Do you want to enter another meal/drink option: ");
@@ -41,6 +74,7 @@ public class HotelMenu {
                         //noOfOptions++;
                         
                     }else{
+                        System.out.println();
                         System.out.println("You have entered an invalid option. Enter Y/N for yes or No");
                     }       
             // }
@@ -56,6 +90,10 @@ public class HotelMenu {
                 }
                 else if(toPayament.equals("Y")){
                     System.out.println("Pay now for:");
+                    
+                    //opt.getOption();
+                    System.out.println(opt.getOption());
+                    //opt.showOption();
                     //get data for the option
                     System.out.println("************************");
                     System.out.println("Total:-------------------" + mealTotal);
@@ -116,12 +154,15 @@ public class HotelMenu {
     }
 
     public int mealAmount(int a,int b,int ...otherNumbers){
-            mealTotal = a+b;
-    
-            for (int i=0; i < otherNumbers.length; i++){
-                mealTotal+= otherNumbers[i];
-            }
-            return mealTotal;
+        Options opt = new Options();
+
+        a = opt.getPrice();
+        mealTotal = a+b;
+
+        for (int i=0; i < otherNumbers.length; i++){
+            mealTotal+= otherNumbers[i];
+        }
+        return mealTotal;
 
         }
     

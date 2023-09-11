@@ -44,6 +44,10 @@ public class Person {
     public void printPersonnalDetails(){
         System.out.println(getPersonnalDetails());
     }
+
+    public void printPersonnalDetails(String name, String email){
+        System.out.println(getPersonnalDetails());
+    }
     
     private String getPersonnalDetails(){
         return email + " "+ name;

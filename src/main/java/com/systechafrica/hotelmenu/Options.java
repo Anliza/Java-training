@@ -1,6 +1,7 @@
 package com.systechafrica.hotelmenu;
 
 public class Options {
+  
     String option;
     public String getOption() {
         return option;

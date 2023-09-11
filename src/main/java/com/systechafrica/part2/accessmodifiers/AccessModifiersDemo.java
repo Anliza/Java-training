@@ -7,10 +7,16 @@ public class AccessModifiersDemo {
     public static void main(String[] args) {
         Person person =new Person("Ann", "nna@gmail.com");
         //person.name = "Ann";
+        
         person.setName ("Hanna");
         //person.email = "nna@gmail.com";
         person.setEmail ("Hanna@gmail.com");
-        person.printPersonnalDetails();
+        person.setName ("anna");
+        //person.email = "nna@gmail.com";
+        person.setEmail ("nna@gmail.com");
+        for (int i=1; i <= 3; i++){
+        person.printPersonnalDetails( ""+ i, "" +i);
+        }
         //person.getPersonnalDetails();
         person.getName();
     }
