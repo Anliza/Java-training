@@ -1,9 +1,17 @@
 package com.systechafrica.lms;
 
 public class Book {
-    int isbnNo;
-    String title;
+    private int isbnNo;
+    private String title;
 
+    public Book() {
+    }
+
+    public Book(int isbnNo, String title) {
+        this.isbnNo = isbnNo;
+        this.title = title;
+    }
+    
     public int getIsbnNo() {
         return isbnNo;
     }
@@ -18,12 +26,6 @@ public class Book {
         this.title = title;
     }
 
-    public Book(int isbnNo, String title) {
-        this.isbnNo = isbnNo;
-        this.title = title;
-    }
-
-    public Book() {
-    }
+    
     
 }

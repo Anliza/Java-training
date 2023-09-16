@@ -34,10 +34,12 @@ public class LMS {
                     
                     case 2:
                         //? view borrowed books
+                        lms.viewBorrowedBooks();
                         break;
 
                     case 3:
                         //? Return a book
+                        lms.returnBook();
                         break; 
                         
                     case 4:
@@ -89,4 +91,20 @@ public class LMS {
         return oneMoreBook; 
     }
 
+    public void viewBorrowedBooks(){
+
+    }
+    
+    public void returnBook(){
+        Book book = new Book();
+        System.out.println("Enter ISBN number: ");
+        int isbn = scanner.nextInt();
+        if(isbn == book.getIsbnNo()){
+            System.out.println("Book returned successfully");
+            // removing book once entered
+            }
+        else{
+            System.out.println("Book not borrowed by student.");
+        }
+    }
 }
