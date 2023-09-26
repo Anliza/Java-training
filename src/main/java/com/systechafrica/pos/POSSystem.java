@@ -9,10 +9,10 @@ public class POSSystem {
     Scanner scanner = new Scanner(System.in);
     final String DEFAULT_PASSWORD = "Admin123";
     final int MAX_NO = 100;
-    Items[] items = new Items[MAX_NO];
+    Item[] items = new Item[MAX_NO];
     int noOfItems = 0;
     int itemNumber = 1;
-    Items buy = new Items();
+    Item buy = new Item();
     double sumOfTotalValue = 0;
     double amountByCustomer;
     double changeBack;
@@ -78,7 +78,7 @@ public class POSSystem {
             System.out.print("Enter the Unit Price: ");
             double unitPrice = scanner.nextDouble();
 
-            Items buyItems = new Items(itemCode, quantity, unitPrice);
+            Item buyItems = new Item(itemCode, quantity, unitPrice);
             items[noOfItems] = buyItems;
             noOfItems++;
 
@@ -106,7 +106,7 @@ public class POSSystem {
         System.out.println();
         sumOfTotalValue = 0;
         for (int i = 0; i < noOfItems; i++) {
-            Items buy = items[i];
+            Item buy = items[i];
             double totalPrice = buy.quantity * buy.unitPrice;
             System.out.println("   " + buy.itemCode+"         " + buy.quantity+ "          " + buy.unitPrice+ "          " + totalPrice);
         

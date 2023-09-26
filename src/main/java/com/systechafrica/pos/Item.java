@@ -1,7 +1,7 @@
 package com.systechafrica.pos;
 
 
-public class Items {
+public class Item {
     int itemCode;
     int quantity;
     double unitPrice;
@@ -30,14 +30,14 @@ public class Items {
     }
 
 
-    public Items(int itemCode, int quantity, double unitPrice) {
+    public Item(int itemCode, int quantity, double unitPrice) {
         this.itemCode = itemCode;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
        
     }
 
-    public Items(){
+    public Item(){
 
     }
 

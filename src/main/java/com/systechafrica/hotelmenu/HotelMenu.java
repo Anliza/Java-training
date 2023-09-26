@@ -7,9 +7,9 @@ import com.systechafrica.reusablecode.ReusableCode;
 public class HotelMenu {
     Scanner scanner = new Scanner(System.in);
     final int MAX_OPTIONS = 50;
-    Options[] options = new Options[MAX_OPTIONS];
+    Option[] options = new Option[MAX_OPTIONS];
     int noOfOptions = 0;
-    Options opt = new Options();
+    Option opt = new Option();
     static int mealTotal;
     static int payamentAmount;
     static int option; 
@@ -102,7 +102,7 @@ public class HotelMenu {
                         break;
                 }
             
-            Options selOptions = new Options(opt.getOption(), opt.getPrice());
+            Option selOptions = new Option(opt.getOption(), opt.getPrice());
             options[noOfOptions] = selOptions;
             noOfOptions++;
 
@@ -132,7 +132,7 @@ public class HotelMenu {
                 mealTotal = 0;
                 //get data for each option
                 for(int i = 0; i < noOfOptions; i++){
-                    Options newOptions = options[i]; 
+                    Option newOptions = options[i]; 
                     System.out.println(newOptions.getOption());
 
                     mealTotal += newOptions.getPrice();

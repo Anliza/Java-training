@@ -1,11 +1,11 @@
 package com.systechafrica.hotelmenu;
 
-public class Options {
+public class Option {
   
     private String option;
     private int price;
     
-    public Options(String option, int price) {
+    public Option(String option, int price) {
         this.option = option;
         this.price = price;
     }
@@ -27,7 +27,7 @@ public class Options {
         this.price = price;
     }
     
-    public Options(){
+    public Option(){
 
     }
 
