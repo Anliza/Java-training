@@ -20,13 +20,14 @@ public class DatabaseAccessDemo {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-        FileHandler fileHandler;
-        try {
-            fileHandler = new FileHandler("working-with-database.txt");
+        FileHandler fileHandler;  
+        try {  
+            
+            fileHandler = new FileHandler("working-with-database.txt",true);
             CustomFormatter formatter = new CustomFormatter();
             LOGGER.addHandler(fileHandler);
             fileHandler.setFormatter(formatter);
+           
 
             // 1. Add the jdbc driver to the pom.xml
             // 2. Load the database driver

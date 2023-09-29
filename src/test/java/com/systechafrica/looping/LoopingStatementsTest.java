@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
-import com.systechafrica.controlflow.ControlFlow;
+import com.systechafrica.part1.controlflow.ControlFlow;
+import com.systechafrica.part1.looping.LoopingStatements;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 public class LoopingStatementsTest {

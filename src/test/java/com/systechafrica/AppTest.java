@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import com.systechafrica.part1.Another;
+import com.systechafrica.part1.App;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) //? default instance
 public class AppTest {
 
