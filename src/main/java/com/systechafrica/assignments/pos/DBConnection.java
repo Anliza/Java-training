@@ -15,8 +15,8 @@ public class DBConnection {
             String connectionUrl = "jdbc:mysql://localhost:3306/anndb";
             String user = "root";
             String password = "Annliza22#";
-        
             return DriverManager.getConnection(connectionUrl, user, password);//connect to db (anndb)
+            
         } catch (ClassNotFoundException | SQLException e) {
             LOGGER.info("Connection to database failed");
             return null;

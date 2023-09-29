@@ -1,0 +1,5 @@
+2023-09-29 23:34:31 | addItem | INFO | Update status= 0
+2023-09-29 23:34:40 | addItem | SEVERE | Rows added=1
+2023-09-29 23:34:53 | addItem | SEVERE | Rows added=1
+2023-09-29 23:35:06 | addItem | SEVERE | Rows added=1
+2023-09-29 23:35:45 | clearItemTable | INFO | Items deleted successfully

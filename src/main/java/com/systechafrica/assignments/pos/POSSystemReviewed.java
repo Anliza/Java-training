@@ -32,7 +32,8 @@ public class POSSystemReviewed {
         
         try{
             POSSystemReviewed pos = new POSSystemReviewed();
-         
+            pos.fileLogger();
+            
             Scanner scanner = new Scanner(System.in);
             ReusableCode rs = new ReusableCode();
             DBConnection db = new DBConnection();
@@ -63,7 +64,7 @@ public class POSSystemReviewed {
                             pos.displayReceipt();
                             break;
                         case 4:
-
+                            pos.clearItemTable(connection);
                             System.exit(0);
                     
                         default:
@@ -183,7 +184,7 @@ public class POSSystemReviewed {
     public void fileLogger() {
         FileHandler fileHandler;
         try {
-            fileHandler = new FileHandler("pos-logger.txt");
+            fileHandler = new FileHandler("Java-training\\pos-logger.txt");
             CustomFormatter formatter = new CustomFormatter();
             LOGGER.addHandler(fileHandler);
             fileHandler.setFormatter(formatter);
@@ -196,9 +197,10 @@ public class POSSystemReviewed {
 
     public void clearItemTable(Connection connection) throws SQLException{
         Statement statement= connection.createStatement();
-        String deleteItems = "DELETE * FROM items;";
-        statement.executeQuery(deleteItems);
+        String deleteItems = "DROP TABLE items;";
+        statement.execute(deleteItems);
         noOfItems = 0;
+        LOGGER.info("Items deleted successfully");
     }
 }
 
