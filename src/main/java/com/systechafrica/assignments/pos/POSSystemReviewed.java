@@ -32,7 +32,7 @@ public class POSSystemReviewed {
         
         try{
             POSSystemReviewed pos = new POSSystemReviewed();
-            pos.fileLogger();
+         
             Scanner scanner = new Scanner(System.in);
             ReusableCode rs = new ReusableCode();
             DBConnection db = new DBConnection();
