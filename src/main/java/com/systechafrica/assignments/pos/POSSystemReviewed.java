@@ -76,7 +76,10 @@ public class POSSystemReviewed {
             }else{
                 System.out.println("You have exhausted your log in attempts.");
             }
+            
+            connection.close();
             scanner.close();
+            
         }catch (InputMismatchException e){
             LOGGER.severe("Wrong input type. "+ e.getMessage());
         } catch(NoSuchElementException e){
@@ -113,8 +116,16 @@ public class POSSystemReviewed {
             int itemCode = scanner.nextInt();
             System.out.print("Enter Quantity: ");
             int quantity = scanner.nextInt();
+            while (quantity < 0) {
+                System.out.print("Sorry, but your quantity must be a positive number. Enter a price:  ");
+                quantity = scanner.nextInt();
+            }
             System.out.print("Enter the Unit Price: ");
             double unitPrice = scanner.nextDouble();
+            while (unitPrice < 0 ) {
+                System.out.print("Sorry, but your price must be a positive decimal. Enter a price:  ");
+                unitPrice = scanner.nextDouble();
+            }
 
             //Insert to table
             String insertQuery = "insert into items (itemcode, quantity, unitprice)values(?,?,?)";
@@ -132,8 +143,8 @@ public class POSSystemReviewed {
             if(moreItems.equalsIgnoreCase("N")){
                 break;
             }
+            preparedStatement.close();
         }
-  
     }
     
     public void itemsListed(Connection connection) throws SQLException{
@@ -144,16 +155,17 @@ public class POSSystemReviewed {
 
         //get items from db
         String selectItems = "SELECT * FROM items;";
-        ResultSet results = statement.executeQuery(selectItems);
-        while (results.next()) {
-            int itemCode = results.getInt("itemcode");
-            int quantity = results.getInt("quantity");
-            double unitPrice = results.getDouble("unitprice");
+        ResultSet resultSet = statement.executeQuery(selectItems);
+        while (resultSet.next()) {
+            int itemCode = resultSet.getInt("itemcode");
+            int quantity = resultSet.getInt("quantity");
+            double unitPrice = resultSet.getDouble("unitprice");
             double totalPrice = quantity * unitPrice;
             System.out.println("   " + itemCode+"         " + quantity+ "          " + unitPrice+ "          " + totalPrice);
         
             sumOfTotalValue += totalPrice;
         }
+        resultSet.close();
     }
 
     public void makePayment(){
@@ -201,6 +213,7 @@ public class POSSystemReviewed {
         statement.execute(deleteItems);
         noOfItems = 0;
         LOGGER.info("Items deleted successfully");
+        statement.close();
     }
 }
 
